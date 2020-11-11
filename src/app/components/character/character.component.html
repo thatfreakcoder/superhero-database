@@ -1,14 +1,46 @@
-<p>character works!</p>
-<h1>{{info.name}}</h1>
-<br>
 <div class="row">
-	<div class="col-2 col-lg-2">
-		<img src="{{info.image.url}}" width="200px" height="200px">
+	<div class="col-lg-3 col-sm-3">
+		<img src="{{info.image.url}}" alt="" style="width: 150px; height: 150px; border-radius: 50%;">
 	</div>
-	<div class="col-10 col-lg-10" *ngFor="let res of info | keyvalue">
-		{{res.key}} 
-		<div class="container" *ngFor="let val of res.value | keyvalue">
-			{{val.key}} || {{val.value}}
+	<div class="col-lg-5 col-sm-1 text-capitalize">
+		<h1>{{info.name}}</h1>
+		<h3>{{info.biography['full-name']}}</h3>
+	</div>
+<!-- </div> -->
+<!-- <div class="row"> -->
+	<!-- <div class="text-center m-auto"> -->
+		<div class="col-lg-6 col-sm-12">
+			<div class="card card-warning">
+				<div class="card-header text-capitalize">
+					<h1>powerstats</h1>
+				</div>
+				<div class="card-body text-center text-justify row">
+					<div class="card text-capitalize col-5 col-lg-5 col-sm-10 m-auto" *ngFor="let power of info.powerstats | keyvalue">
+						<div class="card-body">
+							<b>{{power.key}}</b>
+							<!-- <p>{{power.value}}</p> -->
+							<div class="progress">
+								<div class="progress-bar" style="width:{{power.value}}%">{{power.value}}</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-	</div>
+		<div class="col-lg-6 col-sm-12">
+			<div class="card card-warning">
+				<div class="card-header text-capitalize">
+					<h1>appearance</h1>
+				</div>
+				<div class="card-body text-center text-justify row">
+					<div class="card text-capitalize col-5 m-auto" *ngFor="let power of info.appearance | keyvalue">
+						<div class="card-body">
+							<b>{{power.key}}</b>
+							<p>{{power.value}}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	<!-- </div> -->
 </div>
