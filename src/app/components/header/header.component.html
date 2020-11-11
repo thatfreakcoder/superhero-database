@@ -1,0 +1,9 @@
+<div class="row">
+	<div *ngFor="let item of apiList" class="col-3">
+		{{item.name}}<br>
+		<img src="{{item.image.url}}" width="200px" height="200px">
+	</div>
+</div>
+<button class="btn btn-link ml-2" (click)="apiCall(1,20)">Home Page</button>
+<button class="btn btn-link ml-2" (click)="getNextList()">Next Page</button>
+<button class="btn btn-link ml-2" (click)="apiCall(start, count)">View All</button>
