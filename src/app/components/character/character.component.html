@@ -1,0 +1,14 @@
+<p>character works!</p>
+<h1>{{info.name}}</h1>
+<br>
+<div class="row">
+	<div class="col-2 col-lg-2">
+		<img src="{{info.image.url}}" width="200px" height="200px">
+	</div>
+	<div class="col-10 col-lg-10" *ngFor="let res of info | keyvalue">
+		{{res.key}} 
+		<div class="container" *ngFor="let val of res.value | keyvalue">
+			{{val.key}} || {{val.value}}
+		</div>
+	</div>
+</div>

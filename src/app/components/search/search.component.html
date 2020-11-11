@@ -17,7 +17,7 @@
 					<div class="card-body">
 						<h4 class="card-title text-dark">{{result.name}}</h4>
 						<p class="card-text text-dark">{{result.work.occupation}}</p>
-						<a class="btn btn-primary">{{result.biography['full-name']}}</a>
+						<a class="btn btn-primary" routerLink="/character/{{result.id}}">{{result.biography['full-name']}}</a>
 					</div>
 				</div>
 			</div>

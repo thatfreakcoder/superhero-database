@@ -10,6 +10,7 @@ import { ApiRequestService } from './services/api-request.service';
 import { SearchComponent } from './components/search/search.component';
 import { BattleComponent } from './components/battle/battle.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { CharacterComponent } from './components/character/character.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     HeaderComponent,
     SearchComponent,
     BattleComponent,
-    NavbarComponent
+    NavbarComponent,
+    CharacterComponent
   ],
   imports: [
     BrowserModule,
