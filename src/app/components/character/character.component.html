@@ -1,46 +1,62 @@
-<div class="row">
+<div class="row mt-2 ml-2">
 	<div class="col-lg-3 col-sm-3">
-		<img src="{{info.image.url}}" alt="" style="width: 150px; height: 150px; border-radius: 50%;">
+		<img 
+			src="{{info.image.url}}" 
+			alt="{{info.name}}_Image" 
+			[ngClass]="{
+					    'low' : class >= 1000 && class < 2000,
+					    'moderate' : class >= 2000 && class < 3000,
+					    'high' : class >= 3000 && class < 4000,
+					    'critical': class > 4000
+			 			}"
+		>
 	</div>
-	<div class="col-lg-5 col-sm-1 text-capitalize">
-		<h1>{{info.name}}</h1>
+	<div class="col-lg-5 col-sm-1 text-capitalize border-"><h1>{{info.name}}</h1>
 		<h3>{{info.biography['full-name']}}</h3>
+		<div 
+			class="badge badge-pill"
+			[ngClass]="{
+				'badge-light': class < 1000,
+				'badge-primary' : class >= 1000 && class < 2000,
+			    'badge-warning' : class >= 2000 && class < 3000,
+			    'badge-success' : class >= 3000 && class < 4000,
+			    'bagde-danger': class > 4000
+			}">
+			{{class}}
+		</div>
 	</div>
-<!-- </div> -->
-<!-- <div class="row"> -->
-	<!-- <div class="text-center m-auto"> -->
-		<div class="col-lg-6 col-sm-12">
-			<div class="card card-warning">
-				<div class="card-header text-capitalize">
-					<h1>powerstats</h1>
-				</div>
-				<div class="card-body text-center text-justify row">
-					<div class="card text-capitalize col-5 col-lg-5 col-sm-10 m-auto" *ngFor="let power of info.powerstats | keyvalue">
-						<div class="card-body">
-							<b>{{power.key}}</b>
-							<!-- <p>{{power.value}}</p> -->
-							<div class="progress">
-								<div class="progress-bar" style="width:{{power.value}}%">{{power.value}}</div>
-							</div>
+</div>
+<div class="row">
+	<div class="col-lg-6 col-sm-12 mt-5">
+		<div class="card card-warning">
+			<div class="card-header text-capitalize">
+				<h1>powerstats</h1>
+			</div>
+			<div class="card-body text-center text-justify row">
+				<div class="card text-capitalize col-5 col-lg-5 col-sm-10 m-auto" *ngFor="let power of info.powerstats | keyvalue">
+					<div class="card-body">
+						<b>{{power.key}}</b>
+						<div class="progress">
+							<div class="progress-bar" style="width:{{power.value}}%">{{power.value}}</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="col-lg-6 col-sm-12">
-			<div class="card card-warning">
-				<div class="card-header text-capitalize">
-					<h1>appearance</h1>
-				</div>
-				<div class="card-body text-center text-justify row">
-					<div class="card text-capitalize col-5 m-auto" *ngFor="let power of info.appearance | keyvalue">
-						<div class="card-body">
-							<b>{{power.key}}</b>
-							<p>{{power.value}}</p>
-						</div>
+	</div>
+	<div class="col-lg-6 col-sm-12 mt-5">
+		<div class="card card-warning">
+			<div class="card-header text-capitalize">
+				<h1>appearance</h1>
+			</div>
+			<div class="card-body text-center text-justify row">
+				<div class="card text-capitalize col-5 m-auto" *ngFor="let power of info.appearance | keyvalue">
+					<div class="card-body">
+						<b>{{power.key}}</b>
+						<p>{{power.value}}</p>
 					</div>
 				</div>
 			</div>
 		</div>
-	<!-- </div> -->
+	</div>
 </div>

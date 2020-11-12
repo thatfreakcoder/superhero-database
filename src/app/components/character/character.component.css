@@ -2,3 +2,25 @@
 	background: linear-gradient(rgb(15, 10, 10), rgb(20, 20, 20));
 	box-shadow: 0 5px 15px #555555;
 }
+img{
+	width: 150px; 
+	height: 150px; 
+	border-radius: 50%; 
+	border: 5px solid;
+}
+.low{
+	border-color: #0000FF;
+	box-shadow: 0 3px 30px #0000FF; 
+}
+.moderate{
+	box-shadow: 0 3px 30px #FFF000; 
+	border-color: #FFF000;
+}
+.high{	
+	box-shadow: 0 3px 30px #00FF00; 
+	border-color: #00FF00;
+}
+.critical{
+	box-shadow: 0 3px 30px #FF0000; 
+	border-color: #FF0000;
+}

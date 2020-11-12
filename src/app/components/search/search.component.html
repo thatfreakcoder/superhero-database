@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="col-12">
-		<input class="col-6" type="text"  [(ngModel)]="searchRes" (keyup)="search(searchRes)" placeholder="Search Any Character">
-		<button class="btn btn-primary" (click)="search(searchRes)">Search</button>
+		<input class="col-9" type="text"  [(ngModel)]="searchRes" (keyup)="search(searchRes)" placeholder="Search Any Character">
+		<button class="btn btn-primary col-3" (click)="search(searchRes)">Search</button>
 	</div>
 	<div class="col-12">
 		<div class="row" *ngIf="apiData.response == 'success'; then success else error"></div>
